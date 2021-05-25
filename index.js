@@ -35,7 +35,20 @@ app.use("/api/item", (req, res) => {
   const resources = getResources();
 
   if (req.method === "DELETE") {
-    const updatedResources = resources.filter((item) => item.id !== req.body);
+    console.log("usuwam");
+
+    const updatedResources = resources.filter(
+      (item) => item.id !== req.body.itemId
+    );
+    console.log("PRZED:");
+    console.log(resources);
+    console.log("PO:");
+    console.log(updatedResources);
+
+    console.log("req.body: ");
+    console.log(req.body);
+
+    console.log(req);
 
     fs.writeFile(
       pathToFile,
