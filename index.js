@@ -8,7 +8,8 @@ const pathToFile = path.resolve("./data.json");
 
 const cors = require("cors");
 const corsOptions = {
-  origin: "http://localhost:3000",
+  // origin: ["http://localhost:3000", "http://any.pl"],
+  origin: "*",
   optionsSuccessStatus: 200,
 };
 
